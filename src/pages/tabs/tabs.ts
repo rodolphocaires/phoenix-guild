@@ -6,15 +6,15 @@ import { HomePage } from '../home/home';
 import { Core } from '../core/core';
 
 @Component({
-  templateUrl: 'tabs.html'
+    templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  home = HomePage;
-  core = Core;
-  about = AboutPage;
+    home = HomePage;
+    core = Core;
+    about = AboutPage;
 
-  constructor() {
+    constructor() {
 
-  }
+    }
 }

@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { App } from './app.component';
 
@@ -14,6 +15,7 @@ import { CoreModule } from '../pages/core/core.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AuthProvider } from '../providers/auth/auth';
 
 @NgModule({
     declarations: [
@@ -27,7 +29,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         AuthModule,
         BrowserModule,
         CoreModule,
-        IonicModule.forRoot(App)
+        IonicModule.forRoot(App),
+        HttpModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -38,9 +41,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         TabsPage
     ],
     providers: [
+        { provide: ErrorHandler, useClass: IonicErrorHandler },
         StatusBar,
         SplashScreen,
-        { provide: ErrorHandler, useClass: IonicErrorHandler }
+        AuthProvider
     ]
 })
 export class AppModule { }

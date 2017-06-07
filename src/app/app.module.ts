@@ -14,6 +14,7 @@ import { AuthModule } from '../pages/auth/auth.module';
 import { CoreModule } from '../pages/core/core.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthProvider } from '../providers/auth/auth';
 
@@ -44,7 +45,8 @@ import { AuthProvider } from '../providers/auth/auth';
         { provide: ErrorHandler, useClass: IonicErrorHandler },
         StatusBar,
         SplashScreen,
-        AuthProvider
+        AuthProvider,
+        InAppBrowser
     ]
 })
 export class AppModule { }
